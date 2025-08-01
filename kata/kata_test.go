@@ -31,3 +31,47 @@ func TestQuarterOf(t *testing.T) {
 		}
 	}
 }
+
+func TestTwiceAsOld(t *testing.T) {
+	testCases := []struct {
+		dadYearsOld int
+		sonYearsOld int
+		expected    int
+	}{
+		{36, 7, 22},
+		{55, 30, 5},
+		{42, 21, 0},
+		{22, 1, 20},
+		{29, 0, 29},
+	}
+
+	// Act & Assert
+	for _, tc := range testCases {
+		result := TwiceAsOld(tc.dadYearsOld, tc.sonYearsOld)
+		if result != tc.expected {
+			t.Errorf("[Alter Vater: %d, Alter Sohn %d] Erwartet wurde der zeitliche Abstand von %d Jahren und nicht %d Jahre.", tc.dadYearsOld, tc.sonYearsOld, tc.expected, result)
+		}
+	}
+}
+
+func TestTwiceAsOldClever(t *testing.T) {
+	testCases := []struct {
+		dadYearsOld int
+		sonYearsOld int
+		expected    int
+	}{
+		{36, 7, 22},
+		{55, 30, 5},
+		{42, 21, 0},
+		{22, 1, 20},
+		{29, 0, 29},
+	}
+
+	// Act & Assert
+	for _, tc := range testCases {
+		result := TwiceAsOldClever(tc.dadYearsOld, tc.sonYearsOld)
+		if result != tc.expected {
+			t.Errorf("[Alter Vater: %d, Alter Sohn %d] Erwartet wurde der zeitliche Abstand von %d Jahren und nicht %d Jahre.", tc.dadYearsOld, tc.sonYearsOld, tc.expected, result)
+		}
+	}
+}
